@@ -13,11 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
   submit.addEventListener('click', function(e){
     inputs.forEach(function(input){
       input.className = 'error';
+        e.stopPropagation();
     });
   });
   inputs.forEach(function(input){
     input.addEventListener('mouseenter', function(e){
       e.target.classList.remove('error');
     });
+  });
+  modal.addEventListener('click', function(e){
+    modal.style.display = 'none';
   });
 });
